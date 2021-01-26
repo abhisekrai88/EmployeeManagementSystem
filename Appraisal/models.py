@@ -11,7 +11,7 @@ PERFGRADE = (
 )
 class Appraisal(models.Model):
     appraisal_ID = models.AutoField("Appraisal ID", primary_key=True)
-    year = models.IntegerField("Year", max_length=4)
+    year = models.IntegerField("Year")
     employee_ID = models.ForeignKey("Employee.Employee", on_delete=models.CASCADE)
     perf_grade = models.CharField("Performance Grade", max_length=30, choices=PERFGRADE)
 
