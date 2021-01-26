@@ -11,5 +11,10 @@ class Employee(models.Model):
     gender = models.CharField("Gender(M/F)", max_length=1)
     dob = models.DateField("Date of Birth")
     date_joined = models.DateField("Date Joined")
-    salary = models.MoneyField("Salary", max_digits=10, decimel_places=2, default_currency='SGD')
+    salary = MoneyField("Salary", max_digits=10, decimel_places=2, default_currency='SGD')
     department_ID = models.ForeignKey(Department, on_delete=models.CASCADE)
+    manager_ID = models.ForeignKey("Appraisal.Manager", on_delete=models.CASCADE)
+    is_activte=models.BooleanField(verbose_name='is active',default=True)
+    
+    def __str__(self):
+        return self.employee_ID
