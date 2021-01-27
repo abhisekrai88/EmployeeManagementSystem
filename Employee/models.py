@@ -17,4 +17,4 @@ class Employee(models.Model):
     is_activte=models.BooleanField(verbose_name='is active',default=True)
     
     def __str__(self):
-        return self.employee_ID
+        return self.first_name
