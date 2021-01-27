@@ -16,11 +16,11 @@ class Appraisal(models.Model):
     perf_grade = models.CharField("Performance Grade", max_length=30, choices=PERFGRADE)
 
     def __str__(self):
-        return self.employee_ID
+        return (str(self.appraisal_ID))+" - "+(str(self.year))
 
 class Manager(models.Model):
     manager_ID = models.AutoField("Manager ID", primary_key=True)
     manager_name = models.CharField("Manager", max_length=30)
 
     def __str__(self):
-        return self.manager_name
+        return (str(self.manager_ID))+" - "+self.manager_name

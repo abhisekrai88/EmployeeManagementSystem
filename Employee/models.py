@@ -14,7 +14,7 @@ class Employee(models.Model):
     salary = MoneyField("Salary", max_digits=14, decimal_places=2  ,default_currency='SGD')
     department_ID = models.ForeignKey(Department, on_delete=models.CASCADE)
     manager_ID = models.ForeignKey("Appraisal.Manager", on_delete=models.CASCADE)
-    is_activte=models.BooleanField(verbose_name='is active',default=True)
+    is_active=models.BooleanField(verbose_name='is active',default=True)
     
     def __str__(self):
-        return self.first_name
+        return (str(self.employee_ID))+'  -  '+(self.first_name+' '+self.last_name)
