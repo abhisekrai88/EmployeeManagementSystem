@@ -10,3 +10,4 @@ class AppraisalAdmin(admin.ModelAdmin):
 @admin.register(Manager)
 class ManagerAdmin(admin.ModelAdmin):
     list_display = ('manager_ID', 'manager_name')
+
