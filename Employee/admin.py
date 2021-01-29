@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Employee
+from Appraisal.models import Appraisal, Manager
+from Department.models import Department
 
 # Register your models here.
 
