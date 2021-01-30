@@ -1,7 +1,8 @@
 from django.contrib import admin
+from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin
 from .models import Appraisal, Manager
-from Department.models import Department
-from Employee.models import Employee
+
 
 # Register your models here.
 
@@ -13,9 +14,4 @@ class AppraisalAdmin(admin.ModelAdmin):
 class ManagerAdmin(admin.ModelAdmin):
     list_display = ('manager_ID', 'manager_name')
 
-##@admin.register(Employee)
-#class EmployeeAdmin(admin.ModelAdmin):
-    #search_fields = ('first_name', 'last_name')
-
-   # list_display = ('first_name', 'last_name', 'department_name', 'perf_grade', 'year')
 
