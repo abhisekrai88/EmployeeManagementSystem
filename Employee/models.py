@@ -2,6 +2,8 @@ from djmoney.models.fields import MoneyField
 from django.contrib.auth.models import User
 from django.db import models
 from Department.models import Department
+from django.contrib.auth.models import AbstractUser, Group
+
 
 # Create your models here.
 
@@ -20,3 +22,4 @@ class Employee(models.Model):
 
     def __str__(self):
         return (str(self.employee_ID))+'  -  '+(self.first_name+' '+self.last_name)
+

@@ -22,6 +22,8 @@ class AppraisalViewSet(viewsets.ModelViewSet):
         emp_id = Employee.objects.filter(user_id=user_id).values('employee_ID')[0]['employee_ID']
         return Appraisal.objects.filter(employee_ID = emp_id)
 
+
+
 class DepartmentViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
     queryset = Department.objects.all()

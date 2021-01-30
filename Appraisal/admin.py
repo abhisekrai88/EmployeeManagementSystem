@@ -15,3 +15,5 @@ class ManagerAdmin(admin.ModelAdmin):
     list_display = ('manager_ID', 'manager_name')
 
 
+
+
