@@ -14,7 +14,7 @@ class Employee(models.Model):
     date_joined = models.DateField("Date Joined")
     salary = MoneyField("Salary", max_digits=14, decimal_places=2  ,default_currency='SGD')
     department_ID = models.ForeignKey(Department, on_delete=models.CASCADE)
-    manager_ID = models.ForeignKey("Appraisal.Manager", on_delete=models.CASCADE)
+    manager_ID = models.ForeignKey("Appraisal.Manager", on_delete=models.CASCADE, null=True, blank=True)
     is_active=models.BooleanField(verbose_name='is active',default=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
