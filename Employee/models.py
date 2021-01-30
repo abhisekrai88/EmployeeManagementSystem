@@ -1,4 +1,5 @@
 from djmoney.models.fields import MoneyField
+from django.contrib.auth.models import User
 from django.db import models
 from Department.models import Department
 
@@ -15,6 +16,7 @@ class Employee(models.Model):
     department_ID = models.ForeignKey(Department, on_delete=models.CASCADE)
     manager_ID = models.ForeignKey("Appraisal.Manager", on_delete=models.CASCADE)
     is_active=models.BooleanField(verbose_name='is active',default=True)
-    
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+
     def __str__(self):
         return (str(self.employee_ID))+'  -  '+(self.first_name+' '+self.last_name)

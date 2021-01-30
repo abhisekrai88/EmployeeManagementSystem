@@ -1,5 +1,5 @@
 from django.db import models
-from Department.models import Department
+
 
 # Create your models here.
 PERFGRADE = (
