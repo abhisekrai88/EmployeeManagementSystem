@@ -15,12 +15,11 @@ from rest_framework import viewsets
 
 class AppraisalViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated, ReadOnly, )
-    #queryset = Appraisal.objects.all()
+    queryset = Appraisal.objects.all()
     serializer_class = AppraisalSerializer
-    def get_queryset(self):
-        user_id = self.request.user.id
-        emp_id = Employee.objects.filter(user_id=user_id).values('employee_ID')[0]['employee_ID']
-        return Appraisal.objects.filter(employee_ID = emp_id)
+    ## user_id = self.request.user.id
+        #emp_id = Employee.objects.filter(user_id=user_id).values('employee_ID')[0]['employee_ID']
+        #return Appraisal.objects.filter(employee_ID = emp_id)
 
 
 
