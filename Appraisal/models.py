@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -21,6 +22,6 @@ class Appraisal(models.Model):
 class Manager(models.Model):
     manager_ID = models.AutoField("Manager ID", primary_key=True)
     manager_name = models.CharField("Manager", max_length=30)
-
+    employee_ID = models.IntegerField(default=None)
     def __str__(self):
         return (str(self.manager_ID))+" - "+self.manager_name
