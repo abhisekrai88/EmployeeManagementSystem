@@ -3,11 +3,9 @@ from Appraisal import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'Appraisal', views.AppraisalViewSet, 
-#'Appraisal'
-)
-router.register(r'Employee', views.EmployeeViewSet)
-router.register(r'Department', views.DepartmentViewSet)
+router.register(r'Appraisal', views.AppraisalViewSet, 'Appraisal')
+router.register(r'Employee', views.EmployeeViewSet, 'Employee')
+router.register(r'Department', views.DepartmentViewSet, 'Department')
 
 urlpatterns = [
     path('', include(router.urls)),
